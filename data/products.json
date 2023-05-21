@@ -1,16 +1,1 @@
-[
-    {
-        "id": "1412342",
-        "title": "Book",
-        "imageUrl": "https://img.freepik.com/free-photo/book-composition-with-open-book_23-2147690555.jpg",
-        "price": "19.99",
-        "description": "It is a book!"
-    },
-    {
-        "title": "Bottle",
-        "imageUrl": "https://www.junglescout.com/wp-content/uploads/2021/01/product-photo-water-bottle-hero.png",
-        "price": "20.99",
-        "description": "Some bottle",
-        "id": "0.4267003829506748"
-    }
-]
+[{"id":"1412342","title":"Book","imageUrl":"https://img.freepik.com/free-photo/book-composition-with-open-book_23-2147690555.jpg","price":"19.99","description":"It is a book!"},{"id":"0.4267003829506748","title":"Bottle!!","imageUrl":"https://www.junglescout.com/wp-content/uploads/2021/01/product-photo-water-bottle-hero.png","price":"23.99","description":"Some bottle!!!"}]
