@@ -1,3 +1,4 @@
+require("dotenv").config()
 const express = require("express")
 const bodyParser = require("body-parser")
 const mongoose = require("mongoose")
@@ -10,11 +11,9 @@ const flash = require("connect-flash")
 const errorController = require("./controllers/error")
 const User = require("./models/user")
 
-const MONGODB_URI = `mongodb+srv://flo2021:${process.env.MONGODB_PASSWORD}@cluster0.nlrt3.mongodb.net/shop?retryWrites=true&w=majority`
-
 const app = express()
 const store = new MongoDBStore({
-    uri: MONGODB_URI,
+    uri: process.env.MONGODB_URI,
     collection: "sessions",
 })
 const csrfProtection = csrf()
@@ -63,7 +62,7 @@ app.use(authRoutes)
 app.use(errorController.get404)
 
 mongoose
-    .connect(MONGODB_URI)
+    .connect(process.env.MONGODB_URI)
     .then((result) => {
         app.listen(3000)
     })

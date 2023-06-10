@@ -1,5 +1,15 @@
 const bcrypt = require("bcryptjs")
 const User = require("../models/user")
+const nodemailer = require("nodemailer")
+
+const transporter = nodemailer.createTransport({
+    host: "smtp.elasticemail.com",
+    port: 2525,
+    auth: {
+        user: process.env.SMTP_EMAIL_USER,
+        pass: process.env.SMTP_EMAIL_PASSWORD,
+    },
+})
 
 exports.getLogin = (req, res, next) => {
     let message = req.flash("error")
@@ -85,7 +95,14 @@ exports.postSignup = (req, res, next) => {
                 })
                 .then((result) => {
                     res.redirect("/login")
+                    return transporter.sendMail({
+                        to: email,
+                        from: process.env.SMTP_EMAIL_USER,
+                        subject: "Signup succeeded!",
+                        html: "<h1>You successfully signed up!</h1>",
+                    })
                 })
+                .catch((err) => console.log(err))
         })
         .catch((err) => console.log(err))
 }
