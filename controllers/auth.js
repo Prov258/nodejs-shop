@@ -134,12 +134,12 @@ exports.postSignup = (req, res, next) => {
         })
         .then((result) => {
             res.redirect("/login")
-            return transporter.sendMail({
-                to: email,
-                from: process.env.SMTP_EMAIL_USER,
-                subject: "Signup succeeded!",
-                html: "<h1>You successfully signed up!</h1>",
-            })
+            // return transporter.sendMail({
+            //     to: email,
+            //     from: process.env.SMTP_EMAIL_USER,
+            //     subject: "Signup succeeded!",
+            //     html: "<h1>You successfully signed up!</h1>",
+            // })
         })
         .catch((err) => {
             const error = new Error(err)
