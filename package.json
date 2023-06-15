@@ -30,6 +30,7 @@
     "mysql2": "^3.3.3",
     "nodemailer": "^6.9.3",
     "pdfkit": "^0.13.0",
-    "sequelize": "^6.32.0"
+    "sequelize": "^6.32.0",
+    "stripe": "^12.9.0"
   }
 }
